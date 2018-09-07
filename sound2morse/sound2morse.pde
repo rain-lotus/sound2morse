@@ -54,23 +54,4 @@ void draw() {
       cha = "";
     }
   }
-  //println(getVol()-50);
 }
-
-//void mousePressed() {
-//  //新しく始まったときに0にする
-//  count = 0;
-//}
-
-//void mouseReleased() {
-//  String status = "";
-//  if (count < ton) {
-//    status = "・";
-//    cha += 1;
-//  } else {
-//    status = "-";
-//    cha += 3;
-//  }
-//  println(status);
-//  count = 0;
-//}

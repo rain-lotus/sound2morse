@@ -21,6 +21,4 @@ void judg() {
     println(status);
     count = 0;
   }
-
-  //println(vol, start_rec );
 }
