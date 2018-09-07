@@ -5,5 +5,5 @@ float getVol(){
   for (int i = 0; i < fft.specSize(); i++) {
     vol += fft.getBand(i)*8;
   }
-  return vol;
+  return vol-50;
 }

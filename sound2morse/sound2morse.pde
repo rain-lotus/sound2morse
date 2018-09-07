@@ -44,32 +44,33 @@ String cha = "";
 
 void draw() {
   background(0);
-  if (mousePressed) background(255);
-  count++;
-  if (!mousePressed && count > delayTime) {
+  judg();
+  count++;//常にカウントしておく
+
+  if (getVol() <= 0 && count > delayTime) {
     if (!cha.equals("")) {
       println(cha);
       println(morse.get(cha));
       cha = "";
     }
   }
-
-  println(getVol()-50);
+  //println(getVol()-50);
 }
 
-void mousePressed() {
-  count = 0;
-}
+//void mousePressed() {
+//  //新しく始まったときに0にする
+//  count = 0;
+//}
 
-void mouseReleased() {
-  String status = "";
-  if (count < ton) {
-    status = "・";
-    cha += 1;
-  } else {
-    status = "-";
-    cha += 3;
-  }
-  println(status);
-  count = 0;
-}
+//void mouseReleased() {
+//  String status = "";
+//  if (count < ton) {
+//    status = "・";
+//    cha += 1;
+//  } else {
+//    status = "-";
+//    cha += 3;
+//  }
+//  println(status);
+//  count = 0;
+//}
