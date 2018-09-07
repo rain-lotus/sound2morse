@@ -9,7 +9,7 @@ import de.bezier.data.sql.mapper.*;
 import de.bezier.data.sql.*;
 
 //var
-int delayTime = 15;
+int delayTime = 10;
 int ton = 6;
 int tu = 0;
 HashMap<String, String> morse = new HashMap<String, String>();
@@ -19,14 +19,14 @@ PFont font;
 SQLite db;
 Minim minim;
 AudioPlayer player;
-String filename = "test3.wav";
+String filename = "morse.wav";
 FFT fft;
 
 void setup() {
   size(800, 800);
   font = createFont("MeiryoUI", 32);
   textFont(font);
-  textSize(32);
+  textSize(20);
   fill(255);
   minim = new Minim(this);
   player = minim.loadFile(filename);
@@ -68,6 +68,5 @@ void draw() {
   }
 
   text(text, 50, 50, 700, 800);
-
   text(mor, 50, 350, 700, 800);
 }
