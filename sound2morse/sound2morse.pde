@@ -17,13 +17,16 @@ HashMap<String, String> morse = new HashMap<String, String>();
 SQLite db;
 Minim minim;
 AudioPlayer player;
-String filename = "";
+String filename = "test3.wav";
+FFT fft;
 
 void setup() {
   size(100, 100);
-  
   minim = new Minim(this);
   player = minim.loadFile(filename);
+  player.play();
+  fft = new FFT(player.bufferSize(), player.sampleRate());
+  fft.window(FFT.HAMMING);
   
   db = new SQLite(this, "morse.sqlite");
   if ( db.connect() ) {
