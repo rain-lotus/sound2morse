@@ -27,7 +27,7 @@ void setup() {
   player.play();
   fft = new FFT(player.bufferSize(), player.sampleRate());
   fft.window(FFT.HAMMING);
-  
+
   db = new SQLite(this, "morse.sqlite");
   if ( db.connect() ) {
     String sql = "select * from morse_table";
@@ -53,6 +53,8 @@ void draw() {
       cha = "";
     }
   }
+
+  println(getVol()-50);
 }
 
 void mousePressed() {
