@@ -13,6 +13,8 @@ int delayTime = 15;
 int ton = 6;
 int tu = 0;
 HashMap<String, String> morse = new HashMap<String, String>();
+
+PFont font;
 //lib
 SQLite db;
 Minim minim;
@@ -21,7 +23,11 @@ String filename = "test3.wav";
 FFT fft;
 
 void setup() {
-  size(100, 100);
+  size(800, 800);
+  font = createFont("MeiryoUI", 32);
+  textFont(font);
+  textSize(32);
+  fill(255);
   minim = new Minim(this);
   player = minim.loadFile(filename);
   player.play();
@@ -41,6 +47,8 @@ void setup() {
 
 int count = 0;
 String cha = "";
+String text = "";
+String mor = "";
 
 void draw() {
   background(0);
@@ -49,9 +57,17 @@ void draw() {
 
   if (getVol() <= 0 && count > delayTime) {
     if (!cha.equals("")) {
-      println(cha);
-      println(morse.get(cha));
+      //println(cha);
+      //println(morse.get(cha));
+      String temp = morse.get(cha);
+      if (temp == null) temp = "?";
+      text += temp;
+      mor += "　";
       cha = "";
     }
   }
+
+  text(text, 50, 50, 700, 800);
+
+  text(mor, 50, 350, 700, 800);
 }

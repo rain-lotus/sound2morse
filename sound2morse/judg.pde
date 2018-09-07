@@ -12,13 +12,14 @@ void judg() {
     start_rec = false;
     String status = "";
     if (count < ton) {
-      status = "・";
+      status = "･";
       cha += 1;
     } else {
       status = "-";
       cha += 3;
     }
-    println(status);
+    //println(status);
+    mor += status;
     count = 0;
   }
 }
